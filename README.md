@@ -38,13 +38,17 @@ NEKOWEB_API_KEY=your_api_key_here
 ```
 ## Usage
 
-Run each file separately and follow the prompts.
+Run main.py and follow the prompts.
+```shell
+python3 main.py
+```
 
 ## TODO
 
-- [ ] Add Functionality for all endpoint.
+- [ ] Add Functionality for all endpoints.
 - [ ] Cleaner output and error handling.
-- [ ] Main.py to access each API endpoint from running one file.
+- [x] Main.py to access each API endpoint from running one file.
+- [ ] Take arguments without running file.
 
 ## Contributing
 
