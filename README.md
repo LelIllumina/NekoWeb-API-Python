@@ -52,4 +52,5 @@ Contributions are welcome! Please fix my awful code if you want :3
 ## Acknowledgments
 
 - NekoWeb for providing the API.
+- [Nekoapi](https://nekoapi.nekoweb.org/) by [Fairfruit](https://fairfruit.nekoweb.org/)
 - The Python community for the libraries
