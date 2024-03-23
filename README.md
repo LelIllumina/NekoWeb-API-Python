@@ -7,6 +7,7 @@ Basic API Wrapper for the [Nekoweb API](https://nekoweb.org/api). More functiona
 - **File Creation**: Create new files or folders on Nekoweb.
 - **Site Information**: Retrieve information about a Nekoweb site, including creation and update timestamps.
 - **Folder Reading**: Read the contents of a folder on Nekoweb.
+- **File Deletion**: Delete files or folders from Nekoweb.
 
 ## Getting Started
 
