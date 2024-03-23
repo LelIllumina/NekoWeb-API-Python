@@ -1,31 +1,38 @@
 import requests
 import json
-from pygments import highlight
-from pygments.lexers import JsonLexer
-from pygments.formatters import TerminalFormatter
 import os
 from dotenv import load_dotenv
 from datetime import datetime
 
 load_dotenv()
 
-username = input("Username: ")
+username = input("Enter the username to get info for: ")
 
-API_KEY = os.getenv('NEKOWEB_API_KEY')
+API_KEY = os.getenv("NEKOWEB_API_KEY")
 url = "https://nekoweb.org/api/site/info/" + username
 
-headers = {"Authorization": API_KEY,}
+headers = {
+    "Authorization": API_KEY,
+}
 
 response = requests.request("GET", url, headers=headers)
 data = json.loads(response.text)
 
-created_at = datetime.fromtimestamp(data['created_at'] / 1000).strftime('%Y-%m-%d %H:%M:%S')
-updated_at = datetime.fromtimestamp(data['updated_at'] / 1000).strftime('%Y-%m-%d %H:%M:%S')
+if data == {'error': 'Site not found'}:
+    print("Error: Site not found")
+    exit(1)
+    
 
-# Print the modified data
-formatted_json = json.dumps(data, indent=4)
-colorful_json = highlight(formatted_json, JsonLexer(), TerminalFormatter())
+created_at = datetime.fromtimestamp(data["created_at"] / 1000).strftime(
+    "%Y-%m-%d %H:%M:%S"
+)
+updated_at = datetime.fromtimestamp(data["updated_at"] / 1000).strftime(
+    "%Y-%m-%d %H:%M:%S"
+)
 
-print(colorful_json)
-print("Created at:", created_at)
-print("Updated at:", updated_at)
+for key, value in data.items():
+    if key not in ["created_at", "updated_at"]:
+        print(f"\033[34m{key}\033[0m: \033[33m{value}\033[0m")
+
+print("\033[34mCreated on\033[0m:\033[33m", created_at, "\033[0m")
+print("\033[34mUpdated on\033[0m:\033[33m", updated_at, "\033[0m")
