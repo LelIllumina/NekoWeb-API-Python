@@ -10,7 +10,7 @@ url = "https://nekoweb.org/api/files/delete"
 
 pathname = input("Path name to file or folder for deletion: ")
 
-payload = "pathname=" + pathname
+payload = f"pathname={pathname}"
 headers = {
     "Authorization": API_KEY,
     "content-type": "application/x-www-form-urlencoded",

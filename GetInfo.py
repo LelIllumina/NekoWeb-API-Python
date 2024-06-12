@@ -9,7 +9,7 @@ load_dotenv()
 username = input("Enter the username to get info for: ")
 
 API_KEY = os.getenv("NEKOWEB_API_KEY")
-url = "https://nekoweb.org/api/site/info/" + username
+url = f"https://nekoweb.org/api/site/info/{username}"
 
 headers = {
     "Authorization": API_KEY,
@@ -18,10 +18,10 @@ headers = {
 response = requests.request("GET", url, headers=headers)
 data = json.loads(response.text)
 
-if data == {'error': 'Site not found'}:
-    print("Error: Site not found")
+if data == {"error": "Site not found"}:
+    print("\033[48;5;1mError: Site not found", "\033[0m")
     exit(1)
-    
+
 
 created_at = datetime.fromtimestamp(data["created_at"] / 1000).strftime(
     "%Y-%m-%d %H:%M:%S"

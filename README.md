@@ -18,27 +18,33 @@ Basic API Wrapper for the [Nekoweb API](https://nekoweb.org/api). More functiona
 ### Installation
 
 1. Clone the repository:
-```shell
-git clone https://github.com/LelIllumina/NekoWeb-API-Python.git
-```
+
+   ```shell
+   git clone https://github.com/LelIllumina/NekoWeb-API-Python.git
+   ```
 
 2. Navigate to the project directory:
-```shell
-cd Nekoweb-api-python
-```
+
+   ```shell
+   cd Nekoweb-api-python
+   ```
 
 3. Install the required Python libraries:
-```shell
-pip install -r requirements.txt
-```
+
+   ```shell
+   pip install -r requirements.txt
+   ```
 
 4. Create a `.env` file in the project root directory with your NekoWeb API key:
-```env filename=".env"
-NEKOWEB_API_KEY=your_api_key_here
-```
+
+   ```shell
+   NEKOWEB_API_KEY=your_api_key_here
+   ```
+
 ## Usage
 
 Run main.py and follow the prompts.
+
 ```shell
 python3 main.py
 ```
